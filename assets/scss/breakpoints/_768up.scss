@@ -1,0 +1,276 @@
+/*******************************************************************************
+Site Name: One Technology
+Author: Felipe Rodopoulos
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+*******************************************************************************/
+
+/*********************
+ TEXTUAL
+*********************/
+.page{ }
+
+
+	/* entry content */
+	.post__content {
+
+		// Reseting mobile styles
+		img{
+			position: relative;
+		  right: initial;
+		  left: initial;
+
+			width: auto;
+		  margin: 0 0 16px;
+		}
+
+		// Alignment
+		.alignnone, img.alignnone{}
+
+		.alignleft, img.alignleft {
+			float: left;
+
+			margin-right: 16px;
+		}
+
+		.alignright, img.alignright {
+			float: right;
+
+			margin-left: 16px;
+		}
+
+		.aligncenter, img.aligncenter {
+			display: block;
+
+			margin: 0 auto 16px;
+		}
+
+		// Sizes
+		.size-thumbnail {}
+
+		.size-medium { width: 50%; }
+
+		.size-large { max-width: 100%; }
+
+		.size-full {
+			position: relative;
+			right: 50%;
+			left: 50%;
+
+			width: 100vw;
+			height: auto;
+			margin: 0 -50vw 26px;
+		}
+	} /* end .post__text */
+
+
+
+
+
+
+/*******************************************************************************
+  #SECTION
+*******************************************************************************/
+.s {}
+
+	.s__ttl {}
+
+	.s__body{}
+
+		.s__txt {
+			max-width: $wrap-sz-lg;
+		}
+
+
+
+
+/*******************************************************************************
+  #LOGO
+*******************************************************************************/
+.the_logo {
+  height: $logo-height-md; 
+}
+
+
+/******************************************************************
+	#SERVICES STYLES
+******************************************************************/
+.srvs {
+	flex-wrap: nowrap;
+}
+
+	.srv {
+		margin: 0;
+		padding: 6*$vertical-pad 3*$horizontal-pad;
+
+		border: 0;
+		border-right: $custom-border;
+
+		&:last-child {
+			padding: 6*$vertical-pad 3*$horizontal-pad;
+
+			border-right: 0;
+		}
+	}
+
+		.srv__img {}
+
+		.srv__ttl {
+			margin: 0 0 3*$vertical-pad;
+		}
+
+		.srv__txt {}
+
+
+
+
+
+/*******************************************************************************
+	#PROJECTS
+*******************************************************************************/
+.prj {
+	display: flex;
+}
+
+	.prj__img {
+		margin: 0;
+		padding-right: $horizontal-pad;
+
+		flex: 1;
+
+		img { max-width: 400px; }
+	}
+
+	.prj__content{
+		padding-left: $horizontal-pad;
+
+		flex: 2;
+	}
+
+	.prj__ttl {}
+
+	.prj__info{}
+
+	.prj__txt {}
+
+	.prj__more { text-align: right;	}
+
+
+
+
+
+/*******************************************************************************
+	#CONTACT & FORM
+*******************************************************************************/
+.s--flex { display: flex; }
+
+.s--form {
+	flex: 1;
+	padding-right: 2*$horizontal-pad;
+}
+
+.s--contact {
+	flex: 1;
+}
+
+.maps {
+	height: 267px;
+	cursor: pointer;
+}
+
+.t--phone { font-size: 150%; }
+
+.t--addr { font-size: 110%; }
+
+
+
+
+
+
+/*******************************************************************************
+	#FOOTER
+*******************************************************************************/
+.ftr--hr{
+	flex: 1;
+	padding-right: 2*$horizontal-pad !important;
+
+	&:after{
+		display: none;
+	}
+}
+
+.ftr--addr { flex: 1; }
+
+
+
+
+/******************************************************************************
+ 	#POST/PAGE
+*******************************************************************************/
+
+.p__content {
+
+	// Reseting mobile styles
+	img{
+		position: relative;
+		right: initial;
+		left: initial;
+
+		width: auto;
+		margin: 0 auto 16px;
+	}
+
+	// With caption
+	.wp-caption {
+		max-width: 100%;
+		margin: 0 auto 10px;
+
+		color: $gray;
+
+		/* images inside wp-caption */
+		img {
+			margin-bottom: 0;
+			width: 100%;
+		}
+
+	} /* end .wp-caption */
+
+	// Alignment
+	.alignnone, img.alignnone{}
+
+	.alignleft, img.alignleft {
+		float: left;
+
+		margin-right: 16px;
+	}
+
+	.alignright, img.alignright {
+		float: right;
+
+		margin-left: 16px;
+	}
+
+	.aligncenter, img.aligncenter {
+		display: block;
+
+		margin: 0 auto 16px;
+	}
+
+	// Sizes
+	.size-thumbnail {}
+
+	.size-medium { width: 50%; }
+
+	.size-large { max-width: 100%; }
+
+	.size-full {
+		position: relative;
+		right: 50%;
+		left: 50%;
+
+		width: 100vw;
+		height: auto;
+		margin: 0 -50vw 26px;
+	}
+
+} /* end .entry-content */

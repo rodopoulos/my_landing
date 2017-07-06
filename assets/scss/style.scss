@@ -1,0 +1,55 @@
+/*! Based in Bones: http://themble.com/bones :) */
+/******************************************************************
+Site Name: feliperodopoulos.com
+Author: Felipe Rodopoulos
+Stylesheet: Main Stylesheet
+******************************************************************/
+
+
+// --------------------------------- PARTIALS ---------------------------------
+
+// normalize: http://necolas.github.io/normalize.css/
+@import "partials/normalize";
+
+// Sass variables
+@import "partials/variables";
+
+// typography
+@import "partials/typography";
+
+
+
+
+// -------------------------------- BREAKPOINTS -------------------------------
+
+// base (mobile first, dude)
+@import "breakpoints/base";
+
+// larger mobiles
+@media only screen and (min-width: 481px) {
+	@import "breakpoints/481up";
+}
+
+// tablets & small desks
+@media only screen and (min-width: 768px) {
+	@import "breakpoints/768up";
+}
+
+// general laptops
+@media only screen and (min-width: 1024px) {
+	@import "breakpoints/1024up";
+}
+
+// general desktops
+@media only screen and (min-width: 1240px) {
+	@import "breakpoints/1240up";
+}
+
+// retina (2x resolution) & fuckin' big screens
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5) {
+
+	@import "breakpoints/2x";
+
+}
