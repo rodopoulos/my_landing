@@ -1,7 +1,6 @@
 /*******************************************************************************
-Site Name: One Technology
+Site Name: feliperodopoulos.com
 Author: Felipe Rodopoulos
-
 Stylesheet: Mobile phones and small tablets
 *******************************************************************************/
 
@@ -12,670 +11,85 @@ html, body{
 
 body {
 	overflow-x: hidden;
-
-	color: $text-clr;
-
-	font-family: $font-base;
-	font-size: 100%;
-	line-height: 1.5;
-
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	background: $gray;
 }
 
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track {	background-color: transparent; }
-::-webkit-scrollbar-thumb {	background-color: $gray; }
 
-::-webkit-input-placeholder{ color: $gray; }
-:-moz-placeholder{ color: $gray; }
-::-moz-placeholder { color: $gray; }
-
-
-
-.js-nav-active { overflow-y: hidden; }
-
-
-/*********************
-	#ANCHORS
-*********************/
-
+/******************************************************************************
+	#BASE TAGS
+******************************************************************************/
+// Links
 a, a:visited {
 	cursor: pointer;
-	text-decoration: none;
+	color: $black;
 
-	color: $link-clr;
-
-	&:hover, &:focus { text-decoration: underline; }
-	&:active {}
+	&:hover, &:focus { }
+	&:active { }
 	&:link { -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );	}
 }
 
-
-
-
-
-/******************************************************************
-H1, H2, H3, H4, H5 STYLES
-******************************************************************/
-
+// Headers
 h1, h2, h3, h4, h5 {
 	text-rendering: optimizelegibility;
 }
 
 
-
-
-
-/*******************************************************************************
-  #SECTION
-*******************************************************************************/
-.s {
-	padding: $section-pad-sm;
-}
-
-	.s__ttl {
-		margin: 0;
-		padding: $section-title-pad-sm;
-
-		text-transform: uppercase;
-
-		color: $section-title-clr;
-		border: 2px solid $border-clr;
-		border-right: 0;
-		border-left: 0;
-
-		font-size: 26px;
-		font-weight: normal;
-	}
-
-	.s__body{
-		overflow: visible;
-
-		padding: $section-body-pad-sm;
-	}
-
-		.s__txt {
-			p {
-				margin: 0 0 14px;
-
-				&:last-child { margin: 0; }
-			}
-		}
-
-
-
-
-
-
-/*******************************************************************************
-	#TEXT
-*******************************************************************************/
-.t--ttl {
-	text-transform: uppercase;
-
-	color: $blue;
-
-	font-weight: normal;
-}
-
-
-
-
-
-
-/*******************************************************************************
-	#BUTTON
-*******************************************************************************/
-.btn {
-	padding: $vertical-pad 3*$horizontal-pad;
-
-	text-transform: uppercase;
-
-	color: $button-txt-clr;
-	border: 2px solid $button-brd-clr;
-	background: $button-bg-clr;
-}
-
-
-
-
-
 /******************************************************************************
- 	#HEADER
-*******************************************************************************/
-
-.the_header{
-	position: fixed;
-	z-index: $lyr-high;
-	top: 0;
-
-	overflow: visible;
-
-	width: 100%;
-
-	transition: $transition-smooth;
-
-	border-bottom: $custom-border;
-	background: $white;
-
-	&.is-hidden { top: -100px;	}
-	&.is-small { padding: 0 $horizontal-pad; }
-}
-
-
-.hdr__wrap{
-	overflow: auto;
+	#HOLY GRAIL
+******************************************************************************/
+body{
 	display: flex;
-	align-items: center;
-
-	padding: 2*$vertical-pad $horizontal-pad $vertical-pad;
+	flex-direction: column;
 }
 
-	.hdr__logo{
-		flex: auto;
-	}
-
-	.hdr__btn{	float: right; }
+header { flex: 0 0 auto; }
+main { flex: 1 0 auto; }
 
 
 
 
 
 /******************************************************************************
- 	#LOGO
-*******************************************************************************/
-.the_logo {
-	transition: $transition-smooth;
-	height: 26px;
-}
-
-.logo--home { max-width: 60%; }
-
-
-/******************************************************************************
- 	#NAV
-*******************************************************************************/
-.the_nav{
-	position: absolute;
-	z-index: $lyr-high;top: 100%;
-	right: 0;
-
-	display: none;
-
-	width: 151px;
-
-	border: 1px solid $gray;
-	border-top: 0;
-	background: $black-overlay;
-
-	li {
-		display: block;
-
-		margin: 10px 15px;
-	}
-
-	a {
-		padding: 3px;
-
-		transition: 0.5s all ease;
-		text-decoration: none;
-		text-transform: uppercase;
-
-		color: $white;
-
-		&.is-active,
-		&:active,
-		&:focus { color: $yellow; }
-
-	}
-}
-
-.nav__toggle{
-	cursor: pointer;
-	transition: $transition-smooth;
-
-	color: $gray;
-	border: 0;
-	outline: none;
-	background: transparent;
-
-	&.js-active, &:hover{
-		color: $dark-gray;
-	}
-}
-
-
-
-
-
-
-/*******************************************************************************
-	#HOME
-*******************************************************************************/
-
-.s--full {
+	#PAGE
+******************************************************************************/
+header {
 	width: 100%;
-	min-height: 100vh;
-	margin: 0 0 30px;
-	padding: 0 !important;
-
-	background: transparent no-repeat center;
-	background-size: cover;
+	background: $blue;
+	color: $white;
+	text-align: center;
+	max-height: 60px;
+	overflow: hidden;
 }
 
-.s--cover {
+main {
 	display: flex;
-
-	width: 100%;
-	height: 100vh;
-
-	background: $white-overlay;
-
 	align-items: center;
 	justify-content: center;
-}
 
-
-
-// ----- BANNER -----
-.bnn {
-	height: 100vh;
-	position: relative;
-  list-style: none;
-  overflow: hidden;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-.bnn__item {
-	background: transparent no-repeat center center;
-	background-size: cover;
-	width: 100%;
-	height: 100vh;
-
-	-webkit-backface-visibility: hidden;
-  position: absolute;
-  display: none;
-  width: 100%;
-  left: 0;
-  top: 0;
-
-	&:first-child {
-		position: relative;
-	  display: block;
-	  float: left;
-	}
-}
-
-
-/*******************************************************************************
-	#SERVICES
-*******************************************************************************/
-
-.srvs{
-	display: flex;
-
-	flex-wrap: wrap;
-}
-
-	.srv {
-		width: 95%;
-		margin: 0 auto 3*$vertical-pad;
-		padding: 3*$vertical-pad 2*$horizontal-pad;
-
-		border-bottom: $custom-border;
-
-		&:last-child {
-			padding: 3*$vertical-pad 2*$horizontal-pad 0;
-
-			border-bottom: 0;
-		}
-	}
-
-		.srv__img{
-			display: block;
-
-			width: 80%; height: auto;
-			margin: 0 auto $vertical-pad;
-
-			img { width: 100%; height: auto; }
-		}
-
-		.srv__ttl{
-			display: block;
-
-			margin: 0 0 $vertical-pad;
-
-			text-transform: uppercase;
-
-			color: $blue;
-
-			font-size: 1.4rem;
-			font-weight: normal;
-		}
-
-		.srv__txt{
-			margin: 0;
-
-			line-height: 1.3em;
-		}
-
-
-
-
-
-
-/*******************************************************************************
-	#PROJECTS
-*******************************************************************************/
-.prj {
-	margin: 0 0 3*$vertical-pad;
-	padding: 3*$vertical-pad 0;
-
-	border-bottom: $custom-border;
-
-	&:first-child { padding: 0 0 3*$horizontal-pad; }
-	&:last-child { border-bottom: 0; }
-}
-
-	.prj__img {
-		width: 100vw;
-		margin: 0 -2*$horizontal-pad;
-
-		img{
-			max-width: 100%;
-			height: auto;
-			max-height: 275px;
-		}
-	}
-
-	.prj__ttl { margin: 0; }
-
-	.prj__info {
-		margin: 0 0 $vertical-pad;
-
-		color: $dark-blue;
-	}
-
-	.prj__txt { margin: 2*$vertical-pad 0; }
-
-	.prj__more {
-		margin: 0;
-
-		text-align: center;
-	}
-
-
-
-
-
-
-
-
-/******************************************************************
-	#CONTACT AND FORM
-******************************************************************/
-.s--form {
-	overflow: hidden;
-
-	margin: 0 0 3*$vertical-pad;
-}
-
-.s--contact {
+	background: #f3f4f4; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f3f4f4 85%, #2a35f4 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #f3f4f4 85%,#2a35f4 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #f3f4f4 85%,#2a35f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f4f4', endColorstr='#2a35f4',GradientType=0 ); /* IE6-9 */
 
 }
 
-address{ font-style: normal; }
-
-.maps {
-	width: 100%;
-	height: 152px;
+.the_box {
+	max-width: 500px;
+	padding: 26px 23px;
+	border: 6px solid $black;
+	background: $white;
+	margin-bottom: 5%;
 }
 
-
-
-
-
-
-/*******************************************************************************
-	#FOOTER
-*******************************************************************************/
-.the_footer {
-	position: relative;
-
-	overflow: hidden;
-
-	color: $footer-txt-clr;
-	background: $footer-bg-clr;
-
-	.s__body { overflow: auto; }
-
-	a { color: $white; }
-}
-
-	.ftr__ttl {
-		margin: 0 0 $vertical-pad;
-
-		font-size: 18px;
-	}
-
-.ftr--hr{
-	&:after{
-		display: block;
-
-		width: 40%;
-		margin-bottom: 10px;
-
-		content: '';
-
-		border: 1px solid $white;
+.info {
+	a {
+		display: inline-block;
+		width: 50%;
 	}
 }
 
-
-/* Social Icons */
-.seo__li{
-	display: inline;
-
-	margin-right: 5px;
+.tiny {
+	font-size: 75%;
+	text-align: center;
 }
-
-.seo__links{
-	margin: 8px 0;
-
-	font-size: 1.5rem;
-}
-
-.seo--post {
-	float: right;
-}
-
-
-
-
-
-
-/******************************************************************************
- 	#POST/PAGE
-*******************************************************************************/
-.p {
-	margin: 80px 0 30px;
-	padding: 0 2*$horizontal-pad;
-}
-
-.p__ttl {
-	letter-spacing: 2px;
-	text-transform: uppercase;
-
-	color: $dark-blue;
-}
-
-.p__ftr {
-	overflow: hidden;
-
-	border-top: 2px solid $yellow;
-}
-
-.p__social {
-
-}
-
-.p__content {
-	margin-bottom: 4*$vertical-pad;
-
-	/* Removing space above the first object in post */
-	> *:first-child { margin-top: 0 !important; margin-left: 0 !important; }
-
-
-	p {	margin: 0 0 1.5em; }
-
-	ul{
-		margin-left: 1.5em;
-
-		list-style: disc;
-	}
-
-	table {
-		width: 100%;
-		margin-bottom: 1.5em;
-
-		border: 1px solid $dark-gray;
-
-		caption {
-			margin: 0 0 7px;
-
-			letter-spacing: 1px;
-			text-transform: uppercase;
-
-			color: $gray;
-
-			font-size: 0.75em;
-		}
-	}
-
-	tr {
-		border-bottom: 1px solid $gray;
-
-		&:nth-child(even) {
-			background-color: $light-gray;
-		}
-	}
-
-	td {
-		padding: 7px;
-
-		border-right: 1px solid $gray;
-
-		&:last-child {
-			border-right: 0;
-		}
-	}
-
-	th {
-		border-right: 1px solid $dark-gray;
-		border-bottom: 1px solid $dark-gray;
-
-		&:last-child {
-			border-right: 0;
-		}
-	}
-
-	blockquote {
-		margin: 0 0 1.5em 0.75em;
-		padding: 0 0 0 0.75em;
-
-		color: $dark-gray;
-		border-left: 3px solid $dark-gray;
-
-		font-style: italic;
-
-		&:before {}
-
-	}
-
-	// By default, all images extends to the edges of the mobile
-	img {
-		position: relative;
-	  right: 50%;
-	  left: 50%;
-
-		display: block;
-
-		width: 100vw;
-		height: auto;
-	  margin: 0 -50vw 26px;
-	}
-
-	pre {
-		margin: 0 0 1.5em;
-		padding: 1.5em;
-
-		color: $light-gray;
-		border-radius: 3px;
-		background: $light-gray;
-
-		font-size: 0.9em;
-	}
-
-} /* end .entry-content */
-
-// With caption
-.wp-caption {
-	max-width: 100%;
-	margin: 0 0 10px;
-
-	color: $gray;
-
-	/* images inside wp-caption */
-	img {
-		margin-bottom: 0;
-	}
-
-	p.wp-caption-text {
-		margin: 4px 5px 7px;
-
-		text-align: center;
-
-		font-size: 0.85em;
-	}
-
-} /* end .wp-caption */
-
-
-
-
-/********************
-WORDPRESS BODY CLASSES
-style a page via class
-********************/
-
-.home {}                          /* home page */
-
-.archive {}                       /* archive page */
-.date {}                          /* date archive page */
-	.date-paged-1 {}                /* replace the number to the corresponding page number */
-.search {}                        /* search page */
-	.search-results {}              /* search result page */
-	.search-no-results {}           /* no results search page */
-	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
-.error404 {}                      /* 404 page */
-.single {}                        /* single post page */
-	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
-.category {}                      /* category page */
-	.category-1 {}                  /* individual category page (i.e. body.category-6) */
-	.category-paged-1 {}            /* replace the number to the corresponding page number */
-.tag {}                           /* tag page */
-	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
-.page-template {}                 /* custom page template page */
-	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-	.page-paged-1 {}                /* replace the number to the corresponding page number */
-	.page-parent {}                 /* parent page template */
-	.page-child {}                  /* child page template */
-	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
-.logged-in {}                     /* if user is logged in */
-.paged {}                         /* paged items like search results or archives */
-	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */

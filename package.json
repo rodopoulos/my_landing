@@ -1,0 +1,44 @@
+{
+  "name": "my_landing",
+  "version": "1.0.0",
+  "description": "Landing page for feliperodopoulos.com",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodopoulos/my_landing.git"
+  },
+  "keywords": [
+    "landing",
+    "felipe",
+    "rodopoulos",
+    "personal",
+    "site"
+  ],
+  "author": "Felipe Rodopoulos",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/rodopoulos/my_landing/issues"
+  },
+  "homepage": "https://github.com/rodopoulos/my_landing#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-minify": "^1.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-resolve-dependencies": "^2.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
+    "jshint": "^2.9.5"
+  }
+}

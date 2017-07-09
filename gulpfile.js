@@ -17,15 +17,7 @@ var imagemin = require('gulp-imagemin');
 
 var assets = {
   scss: './assets/scss/',
-  css: {
-    theme: './build/css/theme/',
-    admin: './build/css/admin/'
-  },
-  js: {
-    root: './assets/js/',
-    site: './assets/js/site/',
-    admin: './assets/js/admin/'
-  },
+  js: './assets/js/',
   imgs: './assets/img/',
 };
 
@@ -35,23 +27,13 @@ var build = {
   imgs: './build/img/'
 };
 
-var libs = {};
+
 
 
 
 
 gulp.task('compile-sass', function() {
-  gulp.src(assets.scss + 'login.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(rename('login.css'))
-    .pipe(prefix({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
-    .pipe(nano())
-    .pipe(gulp.dest(build.css))
-
-  return gulp.src(assets.scss + 'style.scss')
+  return gulp.src(assets.scss + 'main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(rename('main.css'))
     .pipe(prefix({
@@ -66,14 +48,44 @@ gulp.task('compile-sass', function() {
 
 gulp.task('css', ['compile-sass'], function() {
   return gulp.src(build.css + 'main.css')
-    .pipe(concat('main.css'))
-    .pipe(nano({zindex: false}))
+    .pipe(nano())
     .pipe(gulp.dest(build.css))
     .pipe(reload({stream: true}));
 });
 
 
 
+
+gulp.task('parse-js', function() {
+  return gulp.src(assets.js.site + '*.js')
+    .pipe(jsdep({
+      pattern: /\* @requires [\s-]*(.*\.js)/g
+    }))
+    .on('error', function(err) {
+      console.log(err.message);
+    })
+    .pipe(plumber())
+    .pipe(jshint())
+    .pipe(jshint.reporter('default', { verbose: true }))
+    .pipe(concat('script.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(build.js));
+});
+
+gulp.task('parse-js', function() {
+  return gulp.src(assets.js + '*.js')
+    .pipe(jsdep({
+      pattern: /\* @requires [\s-]*(.*\.js)/g
+    }))
+    .on('error', function(err) {
+      console.log(err.message);
+    })
+    .pipe(plumber())
+    .pipe(jshint())
+    .pipe(jshint.reporter('default', { verbose: true }))
+    .pipe(concat('script.js'))
+    .pipe(gulp.dest(build.js));
+});
 
 gulp.task('js', function() {
   return gulp.src(assets.js.site + '*.js')
@@ -92,9 +104,7 @@ gulp.task('js', function() {
 });
 
 
-
-
-gulp.task('images', function() {
+gulp.task('img', function() {
   return gulp.src(assets.imgs + '*.*')
     .pipe(imagemin({
       progressive: true
@@ -107,7 +117,7 @@ gulp.task('images', function() {
 
 gulp.task('browser-sync', function () {
 	browserSync.init({
-		proxy: "localhost/onetechnology",
+		proxy: "localhost/my_landing",
 		notify: false
 	});
 
@@ -119,4 +129,6 @@ gulp.task('browser-sync', function () {
 
 
 
-gulp.task('default', ['css', 'js', 'images', 'browser-sync']);
+gulp.task('default', ['compile-sass', 'parse-js', 'img', 'browser-sync']);
+
+gulp.task('build', ['css', 'js', 'img']);
