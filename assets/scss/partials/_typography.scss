@@ -111,12 +111,12 @@ h6 {
   line-height : $leading;
 }
 h1 {
-  font-size : 3 * $scale * 1rem;
-  line-height : 3 * $leading;
-}
-h2 {
   font-size : 2 * $scale * 1rem;
   line-height : 2 * $leading;
+}
+h2 {
+  font-size : 1.5 * $scale * 1rem;
+  line-height : 1.5 * $leading;
 }
 h3 {
   font-size : 1 * $scale * 1rem;

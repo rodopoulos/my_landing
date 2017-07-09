@@ -28,7 +28,7 @@ a, a:visited {
 	&:link { -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );	}
 }
 
-// Headers
+// Headings
 h1, h2, h3, h4, h5 {
 	text-rendering: optimizelegibility;
 }
@@ -53,6 +53,7 @@ main { flex: 1 0 auto; }
 	#PAGE
 ******************************************************************************/
 header {
+	padding: 15px 0;
 	width: 100%;
 	background: $blue;
 	color: $white;
@@ -84,8 +85,10 @@ main {
 
 .info {
 	a {
+		width: 49%;
+		text-align: center;
 		display: inline-block;
-		width: 50%;
+		margin-bottom: 20px;
 	}
 }
 
