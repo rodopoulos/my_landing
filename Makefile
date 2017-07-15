@@ -1,4 +1,5 @@
 BUILD_DIR := ./live
+BUILD_PATHS := LICENSE index.html build
 
 install:
 	npm install
@@ -9,7 +10,7 @@ prod: deploy
 	@ echo "Production deploy complete"
 
 build:
-	@ cp -r LICENSE index.html
+	@ cp -r $(BUILD_PATHS) $(BUILD_DIR)
 	@ echo "Build step finished"
 
 # Sub-tasks
@@ -24,4 +25,4 @@ deploy:
 	git push -f origin +master:refs/heads/master
 	@ echo "Deploy is done"
 
-.PHONY: install build clean deploy git-prod git-staging prod staging
+.PHONY: install build clean deploy
