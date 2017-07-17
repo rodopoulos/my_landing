@@ -1,5 +1,5 @@
 BUILD_DIR := ./live
-BUILD_PATHS := LICENSE *.html build
+BUILD_PATHS := LICENSE *.html *.pdf build
 
 install:
 	npm install
