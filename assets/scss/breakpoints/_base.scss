@@ -72,6 +72,10 @@ header {
   text-align : center;
   max-height : 60px;
   overflow : hidden;
+
+  img {
+    max-width: 280px;
+  }
 }
 
 main {
